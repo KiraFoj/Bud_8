@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="Bud_8.MainPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+    <TableView HeightRequest="700">
+        <TableRoot>
+            <TableSection Title="Перснальные данные">
+                <EntryCell
+                    x:Name="fio"
+                    Label="Фамилия"
+                    Placeholder="Введите фамилию" />
+
+                <EntryCell
+                    x:Name="name"
+                    Label="Имя"
+                    Placeholder="Введите имя" />
+
+                <EntryCell
+                    x:Name="lastName"
+                    Label="Отчество"
+                    Placeholder="Введите отчество" />
+                <EntryCell
+                    x:Name="O"
+                    Label="Оценки"
+                    Placeholder="Отл, хор, норм или плох?" />
+
+                <ViewCell>
+                    <DatePicker
+                        x:Name="dateBirth"
+                        Margin="15,0,15,0"
+                        DateSelected="dateBirth_DateSelected" />
+                </ViewCell>
+
+                <TextCell x:Name="age" Text="Возраст - " />
+                <ViewCell>
+                    <StackLayout Margin="15,0,15,0" Orientation="Horizontal">
+                        <Label
+                            Margin="5,0,15,0"
+                            Text="Пол"
+                            VerticalOptions="Center" />
+
+                        <Picker Title="Выберите пол" x:Name="Pol">
+                            <Picker.Items>
+                                <x:String>Мужской</x:String>
+                                <x:String>Женский</x:String>
+                                <x:String>Нейтральный пол</x:String>
+                                <x:String>Полубог</x:String>
+                            </Picker.Items>
+
+                        </Picker>
+                    </StackLayout>
+                </ViewCell>
+                <ViewCell >
+
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Картинка"/>
+                        <Image
+                            x:Name="Ffff"
+                            WidthRequest="100"
+                            HeightRequest="100"
+                            Aspect="Fill"/>
+                        <Button Margin="50,0,0,0" Clicked="Button_Clicked" />
+                    </StackLayout>
+                </ViewCell>
+                <ViewCell>
+                    <StackLayout Margin="15,0,15,0" Orientation="Horizontal">
+                        <Label
+                            Margin="5,0,15,0"
+                            Text="Староста"
+                            VerticalOptions="Center" />
+
+                        <Picker Title="Выберите да или нет" x:Name="Star">
+                            <Picker.Items>
+                                <x:String>Да</x:String>
+                                <x:String>Нет</x:String>
+                            </Picker.Items>
+
+                        </Picker>
+                    </StackLayout>
+                </ViewCell>
+                <ViewCell>
+                    <StackLayout>
+                        <Button Text="Сохранить" Clicked="Sohr"/>
+                    </StackLayout>
+                </ViewCell>
+                <ViewCell>
+                    <StackLayout>
+                        <Button Text="Получить сохранённое" Clicked="PolSohr"/>
+                    </StackLayout>
+                </ViewCell>
+
+            </TableSection>
+
+            <!--<TableSection x:Name="phone" Title="Телефоны">
+                <EntryCell Keyboard="Telephone" Placeholder="Введите телефон" />
+
+            </TableSection>-->
+
+            <!--<TableSection x:Name="addphone" Title="Телефоны">
+                <ViewCell>
+                    <Button
+                        Margin="5,0,15,0"
+                        Clicked="AddPhone_Clicked"
+                        Text="Добавить телефон" />
+                </ViewCell>
+
+            </TableSection>-->
+
+        </TableRoot>
+
+    </TableView>
+
+</ContentPage>
